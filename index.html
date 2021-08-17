@@ -7,19 +7,48 @@
 
 	<meta name="viewport" content="width=device-width, initial=scaile=1">
 	<!-- css files linking -->
-	<link rel="stylesheet"  href="style.css">
+	
+		<!-- google fonts for rubik font style -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
+		<!-- fontawesome all -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<!-- google fonts for rubik font style -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+		<!-- style sheet for our own -->
+		<link rel="stylesheet"  href="style.css">
 
 	<title>TO DO list</title>
 </head>
 <body>
 <header>
-	
+	<h1>Prem's Todo List</h1>
 </header>
+
+<form>
+	<input type="text" class="todo-input" placeholder="Type ur todo her">
+	<button class="todo-button" type="submit">
+		<i class="fas fa-plus-square"></i>
+	</button>
+	<div class="select"> 
+		<select name="todos" class="filter-todo">
+			<option value="all">All</option>
+			<option value="completed">Completed</option>
+			<option value="uncompleted">Uncompeleted</option>
+		</select>
+	</div>
+</form>
+
+<div class="todo-container">
+	<ul class="todo-list">
+		<!-- <div class="todo">
+			<li class=todo-item></li>
+			<button class="completed-btn">for complete</button>
+			<button class="trah-btn">for trash</button>
+		</div> -->
+	</ul>
+</div>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
