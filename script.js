@@ -54,14 +54,13 @@ function deleteCheck(event){
 		// console.log('delete button');
 		const todo =item.parentElement;
 		todo.classList.add('fall');
-		
 		// setTimeout(function(){
 		// 	todo.remove();
 		// },300);
 		//waits til transition is finished and then executes the function
-		todo.addEventListener("trasitioned", function(){
+		todo.addEventListener("transitionend", function(){
 			todo.remove();
-		})
+		});
 
 	}
 
