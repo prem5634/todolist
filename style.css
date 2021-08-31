@@ -10,6 +10,8 @@ body{
 	background: linear-gradient(120deg, #f6d365, #fda085);
 	color: white;
 	min-height: 100vh;
+	width: 100%;
+	background-repeat: no-repeat;
 }
 
 header{
@@ -18,17 +20,24 @@ header{
 
 header, form{
 	display: flex;
-	min-height: 20vh;
-	justify-content: center;
-	align-items: center;
+    min-height: 20vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 form input, form button{
-	padding: 0.5rem;
+	
 	font-size: 2rem;
 	border: none;
 	background: white;
 }
+form input{
+	padding: 0.5rem;
+
+}
 form button{
+	padding: 0.5rem;
 	color: #d88771;
 	background: white;
 	cursor: pointer;
@@ -109,7 +118,6 @@ select{
 .select{
 	margin: 1rem;
 	position: relative;
-	overflow: hidden;
 }
 
 select{
@@ -134,3 +142,9 @@ select{
 	background-color: white;
 	color: #ff6f47;
 }
+
+@media only screen and (max-width: 600px) {
+	body{
+		min-width:450px;
+	}
+  }
