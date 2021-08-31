@@ -144,7 +144,8 @@ select{
 }
 
 @media only screen and (max-width: 600px) {
-	body{
+	html{
 		min-width:450px;
+		background: linear-gradient(120deg, #f6d365, #fda085);
 	}
   }
