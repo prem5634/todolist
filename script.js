@@ -215,6 +215,7 @@ function deleteTodo(todo){
 	}
 	console.log(todos);
 	localStorage.setItem('todos', JSON.stringify(todos));
+	
 	// location.reload();
 }
 
