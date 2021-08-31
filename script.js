@@ -3,7 +3,7 @@ const todoInput =document.querySelector('.todo-input');
 const todoButton =document.querySelector('.todo-button');
 const todoList =document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
-
+const todoListdelete = document.querySelector('.todoList-delete');
 
 
 //event listeners
@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('click', filterTodo);
+todoListdelete.addEventListener('click',deleteTodos);
+
 
 //functions
 function addTodo(event){
@@ -37,6 +39,8 @@ function addTodo(event){
 	completedButton.innerHTML ='<i class="fas fa-check"></i>';
 	completedButton.classList.add('completed-btn');
 	todoDiv.appendChild(completedButton);
+
+
 	//trash button
 	const trashButton= document.createElement('button');
 	trashButton.innerHTML ='<i class="fas fa-trash"></i>';
@@ -53,7 +57,7 @@ function addTodo(event){
 
 function deleteCheck(event){
 	// to know what we are clicking on
-	// console.log(event.target);
+	console.log(event.target);
 
 	const item = event.target;
 
@@ -62,6 +66,12 @@ function deleteCheck(event){
 		// console.log('delete button');
 		const todo =item.parentElement;
 		todo.classList.add('fall');
+		
+		
+		todo_item=todo.querySelector('.todo-item').innerText;
+		console.log(todo_item);
+		deleteTodo(todo_item);
+
 		// setTimeout(function(){
 		// 	todo.remove();
 		// },300);
@@ -186,3 +196,25 @@ function getTodos(todo){
 	});
 
 }
+
+function deleteTodos(todo){
+	localStorage.clear();
+	location.reload();
+}
+
+function deleteTodo(todo){
+	var  todos={};
+	todos=JSON.parse(localStorage.getItem('todos'));
+	console.log(todos);
+	for(let i=0;i<todos.length;i++){
+		if(todos[i]===todo){
+			console.log('found  '+ todo);
+			todos.splice(i,1);
+			break;
+		}
+	}
+	console.log(todos);
+	localStorage.setItem('todos', JSON.stringify(todos));
+	// location.reload();
+}
+

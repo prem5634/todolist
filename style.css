@@ -63,7 +63,7 @@ form button:hover{
 	flex: 1;
 }
 
-.trash-btn, .completed-btn{
+.trash-btn, .completed-btn, .trashList-btn{
 	color: white;
 	padding: 1rem;
 	border: none;
@@ -73,10 +73,14 @@ form button:hover{
 .completed-btn{
 	background: rgb(73,204, 73);
 }
-.trash-btn{
+.trash-btn,.trashList-btn{
 	background: #ff6f47;
 }
-
+.trashList-btn{
+	margin-left: 1.5rem;
+	padding: 1.5rem;
+	border-radius: 10px;
+}
 .todo-item{
 	padding: 0.5rem 0.5rem;
 }
